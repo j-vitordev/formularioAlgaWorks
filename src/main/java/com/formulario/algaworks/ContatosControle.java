@@ -3,6 +3,7 @@ package com.formulario.algaworks;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 
@@ -20,5 +21,11 @@ public class ContatosControle {
         model.addAttribute("pessoas", LISTA_PESSOAS);
         model.addAttribute("pessoa", new Pessoa());
         return "index";
+    }
+
+    @PostMapping("/pessoas")
+    public String salvar(Pessoa pessoa){
+        LISTA_PESSOAS.add(pessoa);
+        return "redirect:/";
     }
 }
