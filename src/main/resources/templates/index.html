@@ -39,7 +39,14 @@
             <td th:text="${i.index + 1}"></td>
             <td th:text="${p.nome}"></td>
             <td th:text="${p.idade}"></td>
+            <td>
+                <a th:href="@{/pessoas/editar/{id}(id=${i.index})}">Editar</a>
+            </td>
         </tr>
+
+
+
+
         </tbody>
     </table>
 </div>

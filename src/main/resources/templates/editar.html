@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<form th:action="@{/pessoas/atualizar/{id}(id=${id})}"
+      th:object="${pessoa}"
+      method="post">
+  <label>Nome:</label>
+  <input type="text" th:field="*{nome}" />
+
+  <label>Idade:</label>
+  <input type="number" th:field="*{idade}" />
+
+  <button type="submit">Atualizar</button>
+</form>
