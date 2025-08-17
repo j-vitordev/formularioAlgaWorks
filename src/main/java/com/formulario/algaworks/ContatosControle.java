@@ -44,5 +44,11 @@ public class ContatosControle {
         return "redirect:/";
     }
 
+    @GetMapping("/pessoas/excluir/{id}")
+    public String excluir(@PathVariable int id) {
+        LISTA_PESSOAS.remove(id);
+        return "redirect:/";
+    }
+
 
 }
